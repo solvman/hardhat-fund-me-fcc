@@ -1,8 +1,8 @@
+require("dotenv").config();
 require("@nomicfoundation/hardhat-toolbox");
 require("hardhat-gas-reporter");
 require("solidity-coverage");
 require("hardhat-deploy");
-require("dotenv").config();
 
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY;
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL;
@@ -30,11 +30,11 @@ module.exports = {
         apiKey: ETHERSCAN_API_KEY,
     },
     gasReporter: {
-        enable: true,
+        enabled: true,
         currency: "USD",
         outputFile: "gas-report.txt",
         noColors: true,
-        // coinmarketcap: COINMARKETCAP_API_KEY,
+        coinmarketcap: COINMARKETCAP_API_KEY,
     },
     namedAccounts: {
         deployer: 0,
